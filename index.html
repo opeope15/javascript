@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hi, I'm Chris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <header class="page hero">
+    <div class="hero-inner">
+      <div class="hero-photo">
+        <!-- Replace the src with your own photo. The box keeps its size (see --hero-img-w / --hero-img-h in styles.css). -->
+        <img src="profile.png" alt="Photo of Chris">
+      </div>
+      <div class="hero-text">
+        <h1>Hi, I'm<br>Chris</h1>
+        <p>I appreciate you checking out my page. Let me give you a quick introduction about myself</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE 2 -->
+  <section class="page about">
+    <div class="about-inner">
+      <h2>About myself</h2>
+      <p>I'm a 3rd year IT student at National University. Currently, I'm working as a Virtual Assistant and I'm just hoping that my client wont fire me haha but I used to be a Freelance videographer and a Customer Service Representative. </p>
+    </div>
+  </section>
+
+  <!-- PAGE 3 -->
+  <section class="page contact">
+    <div class="contact-inner">
+      <h2>Wanna<br>get in<br>touch<br>with me?</h2>
+
+      <div class="links">
+        <!-- Facebook: opens in a new tab -->
+        <a class="link-card" href="https://www.facebook.com/chris.loretoo/" target="_blank" rel="noopener noreferrer">
+          <div class="icon-box"><img src="facebooklogo.png" alt="Facebook icon"></div>
+          <div>
+            <h3>Facebook</h3>
+            <span>facebook.com/chris.loretoo</span>
+          </div>
+        </a>
+
+        <!-- Instagram: opens in a new tab -->
+        <a class="link-card" href="https://www.instagram.com/chrisloretoo/" target="_blank" rel="noopener noreferrer">
+          <div class="icon-box"><img src="instagram.png" alt="Instagram icon"></div>
+          <div>
+            <h3>Instagram</h3>
+            <span>instagram.com/chrisloretoo</span>
+          </div>
+        </a>
+
+        <!-- Email: click to copy -->
+        <button class="link-card" id="emailCard" type="button" data-email="chrisloreto10.15@gmail.com" aria-label="Copy email address">
+          <div class="icon-box"><img src="gmail.png" alt="Email icon"></div>
+          <div>
+            <h3>Email<span class="copy-note" id="copyNote" role="status">Copied!</span></h3>
+            <span>chrisloreto10.15@gmail.com</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

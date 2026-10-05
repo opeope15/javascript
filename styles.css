@@ -1,0 +1,171 @@
+:root {
+  --pink: #ffc4e1;
+  --cream: #fdfdee;
+  --green: #c2d345;
+  --brown: #3b1e19;
+  --display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --body: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+
+  /* ===== Change image sizes here ===== */
+  --hero-img-w: 540px;
+  --hero-img-h: 500px;
+  --icon-size: 124px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body);
+  color: var(--brown);
+  background: var(--cream);
+}
+
+/* One "page" per section, full screen, scrolls one by one */
+.page {
+  min-height: 100vh;
+  min-height: 100svh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  padding: 64px 5vw;
+}
+
+h1, h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Page 1: Hero ---------- */
+.hero { background: var(--pink); }
+
+.hero-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6vw;
+  align-items: center;
+}
+
+.hero-photo {
+  width: var(--hero-img-w);
+  height: var(--hero-img-h);
+  border: 3px solid #000;
+  overflow: hidden;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-text { display: flex; flex-direction: column; gap: 12vh; }
+.hero-text h1 { font-size: clamp(3.5rem, 8vw, 7.5rem); }
+.hero-text p { font-size: 1.15rem; line-height: 1.5; max-width: 22rem; }
+
+/* ---------- Page 2: About ---------- */
+.about { justify-content: center; }
+
+.about-inner {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.about h2 { font-size: clamp(3rem, 7vw, 6.5rem); text-align: center; }
+.about p {
+  font-size: clamp(1.25rem, 2.3vw, 1.9rem);
+  line-height: 1.45;
+  max-width: 30em;
+}
+
+/* ---------- Page 3: Contact ---------- */
+.contact { background: var(--green); }
+
+.contact-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5vw;
+  align-items: center;
+}
+
+.contact h2 { font-size: clamp(3.2rem, 7vw, 6.5rem); }
+
+.links { display: flex; flex-direction: column; gap: 14px; }
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 30px 34px;
+  background: var(--cream);
+  color: inherit;
+  text-decoration: none;
+  border: 0;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.link-card:hover { transform: translateX(-6px); }
+.link-card:focus-visible { outline: 3px solid var(--brown); outline-offset: 3px; }
+
+.icon-box {
+  flex: 0 0 var(--icon-size);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border: 3px solid #000;
+  overflow: hidden;
+}
+.icon-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.link-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+.link-card span { font-size: 1rem; line-height: 1.4; word-break: break-word; }
+
+/* "Copied!" confirmation for the email card */
+.copy-note {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--brown);
+  color: var(--cream);
+  padding: 2px 10px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.copy-note.show { opacity: 1; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 860px) {
+  :root { --icon-size: 88px; }
+  .hero-inner, .contact-inner { grid-template-columns: 1fr; }
+  .hero-photo { width: 100%; max-width: var(--hero-img-w); height: auto; aspect-ratio: 54 / 50; }
+  .hero-text { gap: 28px; }
+  .contact h2 br { display: none; }
+  .link-card { padding: 20px; gap: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .link-card { transition: none; }
+}
